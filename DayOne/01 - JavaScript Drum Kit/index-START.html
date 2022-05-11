@@ -70,10 +70,10 @@ function playSound(e){// this function will play sound
 };
 const keys = document.querySelectorAll('.key')
 
-function  removeTransition(e){ // this funch kinda removeing the transition
+function  removeTransition(e){ // this func kinda removeing the transition
   if (e.propertyName !== 'transform') return; // transform the changes 
       this.classList.remove('playing');
-}
+}  
 keys.forEach(key =>key.addEventListener('transitionend', removeTransition) )
 
 window.addEventListener('keydown', playSound)
