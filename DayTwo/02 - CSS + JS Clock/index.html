@@ -52,6 +52,10 @@
       background: black;
       position: absolute;
       top: 50%;
+      transform: rotate(90deg);
+      transform-origin: 100%;
+      transition: all 0.05s;
+      transition-timing-function:cubic-bezier(0.1,2.7,0.58,1);
     }
 
   </style>
@@ -63,5 +67,25 @@
             <div class="hand second-hand"></div>
         </div>
     </div>
+    <script>
+      const secondHand = document.querySelector('.second-hand');
+      const minHand = document.querySelector('.min-hand')
+      function setDate(){
+        const now = new Date;
+        //geting time
+        const seconds = now.getSeconds();
+        const minute = now.getMinutes()
+        //making clockwise degree
+        const secondsDegrees = ((seconds/60)*360)+ 90;
+        const minsDegree = ((minute/60)*360) + 90;
+        //manipulating with degree
+        secondHand.style.transform = `rotate(${secondsDegrees}deg)`
+        minHand.style.transform = `rotate(${minsDegree}deg)`
+
+        console.log(minsDegree);
+      }
+
+      setInterval(setDate,1000);
+    </script>
 </body>
 </html>
