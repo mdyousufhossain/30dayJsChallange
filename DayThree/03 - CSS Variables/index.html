@@ -56,7 +56,13 @@
   <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
 
   <script>
+      const input = document.querySelectorAll('.controls input');
 
+      function handleUpdate(){
+          console.log(this.value);
+      }
+
+      input.forEach(input => input.addEventListener('change',handleUpdate))
   </script>
 </body>
 </html>
