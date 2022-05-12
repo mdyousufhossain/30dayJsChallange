@@ -59,12 +59,14 @@
       const input = document.querySelectorAll('.controls input');
 
       function handleUpdate(){
+          //using this for ensuring 'px'
           const suffix = this.dataset.sizing || '';
-          console.log(this.value);
+          //using setproperty to change variable value
           document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix)
       }
 
       input.forEach(input => input.addEventListener('change',handleUpdate))
+      //adding mousemove cause color dont have  change event
       input.forEach(input => input.addEventListener('mousemove',handleUpdate))
   </script>
 </body>
