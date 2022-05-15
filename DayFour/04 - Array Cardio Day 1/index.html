@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- day four -->
-    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <h1><em>have a look at the JavaScript Console</em> 💁</h1>
   <script>
     // Get your shorts on - this is an array workout!
     // ## Array Cardio Day 1
@@ -45,7 +45,7 @@
     
 
     console.table(fifteen)
-
+    
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
     const firstLast = inventors.map(inventor =>`${inventor.first} ${inventor.last}`)
@@ -53,7 +53,9 @@
     console.table(firstLast)
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const ordared = inventors.sort((a,b) => a.year > b.year ? 1:-1)
 
+    console.table(ordared)
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
 
