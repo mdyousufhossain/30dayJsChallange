@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- day four -->
-    <h1><em>have a look at the JavaScript Console</em> 💁</h1>
-  <script>
+
     // Get your shorts on - this is an array workout!
     // ## Array Cardio Day 1
 
@@ -63,7 +52,13 @@
 
     console.log(totalYears)
     // 4. How many years did all the inventors live all together?
+    const oldest = inventors.sort(function(a,b){
+      const lastGuy = a.passed - a.year,
+            nextGuy = b.passed - b.year;
+      return lastGuy > nextGuy ? -1:1; 
+    });
 
+    console.table(oldest)
     // 5. Sort the inventors by years lived
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
@@ -76,6 +71,3 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-    </script>
-</body>
-</html>
